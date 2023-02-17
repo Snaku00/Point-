@@ -7,19 +7,16 @@ using std::cout;
 class Human{
     private:
     bool intheCar_ = false;
-    const int Mvitesse = 3;
-    const int Cvitesse = 12;
+    bool enVie = true;
 
     public:
-    int distance = 0;
-    
+    int temps;
+    int Hvitesse = 3;
+    int distance = Hvitesse * temps;
     void walk(){
-       
-        distance += 5;
         sleep(3);
     }
     void run(){
-        distance += 10;
         cout << "Vous commencez a courir!" << '\n';
         sleep(3);
         cout << "Vous etes fatigue." << '\n';
@@ -39,6 +36,12 @@ class Human{
         return intheCar_; 
     }
 
+    bool estEnVie(){
+        return enVie;
+    }
+    bool pasEnVie(){
+        return enVie = false;
+    }
 };
 
 #endif
